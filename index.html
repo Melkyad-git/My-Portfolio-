@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melkizadeck Wekesa - Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1, h2 {
+            color: #008000;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        /* Profile Avatar */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        /* Navigation */
+        .menu-btn {
+            background-color: #008000;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .menu {
+            display: none;
+            background: #008000;
+            color: white;
+            padding: 10px;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            width: 200px;
+            border-radius: 5px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+        }
+        /* CV Section */
+        .cv-section {
+            display: none;
+            background: #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .cv-btn {
+            background-color: #008000;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        /* Contact Section */
+        .contact {
+            margin-top: 20px;
+            padding: 10px;
+            background: #008000;
+            color: white;
+            text-align: center;
+        }
+        /* WhatsApp Floating Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Button -->
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    <div class="menu" id="menu">
+        <a href="#about" onclick="closeMenu()">About Me</a>
+        <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
+        <a href="#projects" onclick="closeMenu()">My Work</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+
+    <div class="container">
+        <!-- Profile Avatar -->
+        <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Melkizadeck" alt="Melkizadeck Wekesa Avatar" class="profile-photo">
+        
+        <!-- About Section -->
+        <h1 id="about">Welcome to My Portfolio! 👋</h1>
+        <p><strong>Melkizadeck Wekesa</strong>, a passionate software developer based in Nairobi. I specialize in full-stack development, database management, and automation.</p>
+        
+        <!-- CV Button -->
+        <button class="cv-btn" onclick="toggleCV()">📄 View My CV</button>
+        <div class="cv-section" id="cv">
+            <h2>My CV</h2>
+            <p><strong>Name:</strong> Melkizadeck Wekesa</p>
+            <p><strong>Address:</strong> Ruaraka, Nairobi</p>
+            <p><strong>Education:</strong> International Youth Fellowship - Mahanaim Training Center (2024-2025)</p>
+            <p><strong>Skills:</strong> Python, HTML, CSS, JavaScript, Node.js</p>
+            <p><strong>Hobbies:</strong> Coding, problem-solving, contributing to open-source projects</p>
+            <p><strong>Referee:</strong> Thomas Washington - IYF Manager</p>
+        </div>
+
+        <!-- Testimonials Section -->
+        <h2 id="testimonials">🌟 Testimonials</h2>
+        <p>Here's what people say about my work:</p>
+        <ul>
+            <li>Wanjiku Njoroge - "An excellent developer with great attention to detail!"</li>
+            <li>Mutua Kamau - "Delivered my project on time with superb quality. Highly recommend!"</li>
+            <li>Achieng Oduor - "A creative and dedicated programmer with impressive skills!"</li>
+        </ul>
+
+        <!-- Projects Section -->
+        <h2 id="projects">💻 My Work</h2>
+        <p>Check out some of my projects:</p>
+        <ul>
+            <li>📚 School Management System</li>
+            <li>🌐 Portfolio Website</li>
+            <li>⚙ Automation Scripts</li>
+        </ul>
+
+        <!-- Contact Section -->
+        <h2 id="contact">📞 Contact</h2>
+        <p>Email: <a href="mailto:wekesamelki@gmail.com">wekesamelki@gmail.com</a></p>
+        <p>Phone: <a href="tel:+254713802808">0713802808</a></p>
+        <p>📸 Instagram: <a href="your-instagram-link" target="_blank">Instagram</a></p>
+        <p>📘 Facebook: <a href="your-facebook-link" target="_blank">Facebook</a></p>
+    </div>
+
+    <!-- Footer -->
+    <div class="contact">
+        <p>✨ Connect with me for exciting projects and collaborations! ✨</p>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/254713802808" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        function closeMenu() {
+            document.getElementById("menu").style.display = "none";
+        }
+
+        function toggleCV() {
+            var cvSection = document.getElementById("cv");
+            if (cvSection.style.display === "block") {
+                cvSection.style.display = "none";
+            } else {
+                cvSection.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
